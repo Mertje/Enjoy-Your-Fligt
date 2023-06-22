@@ -1,0 +1,71 @@
+.memory {
+  padding: 50px 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.blockWidth {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.memory div {
+  position: relative;
+  left: 0;
+  top: 0;
+  min-width: 150px;
+  max-height: 200px;
+}
+
+.memory img {
+  min-width: 150px;
+  max-width: 200px;
+  transition: all 200ms;
+  cursor: pointer;
+}
+.memory div .cover {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.memory div .images {
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.hide {
+  opacity: 0;
+  transform: rotateY(180deg);
+  z-index: -1;
+}
+
+#reset {
+  display: block;
+  margin: 20px auto;
+  padding: 4px 10px;
+  height: 40px;
+  background-color: var(--main-color-light);
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: 200ms;
+  color: var(--highlight-color);
+}
+
+#reset:hover {
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .memory img {
+    max-width: 100%;
+  }
+  .memory div {
+    max-width: 40%;
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "7 rings",
+    "singer": "music from https://pixabay.com/music/",
+    "img": "cover/ariana-grande.jpg",
+    "path": "m1.mp3"
+  },
+  {
+    "name": "Anti-Hero",
+    "singer": "https://pixabay.com/music/",
+    "img": "cover/Taylor.jpg",
+    "path": "m2.mp3"
+  },
+  {
+    "name": "Flowers",
+    "singer": "https://pixabay.com/music/",
+    "img": "cover/miley.jpg",
+    "path": "m3.mp3"
+  }
+]

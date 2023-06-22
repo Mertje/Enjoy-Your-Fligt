@@ -1,0 +1,65 @@
+.content {
+    padding: 0 1rem;
+}
+
+#winOrLoseMessage,
+#title,
+#tries {
+    text-align: center;
+}
+
+.game {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.image-container {
+    position: center;
+    top: 50%;
+    left: 50%;
+}
+
+.winOrLose {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.winOrLose button {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.winOrLose img {
+    display: none;
+}
+
+#keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.keyboardButton {
+    border: 5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: var(--accent-color-4);
+    height: fit-content;
+}
+
+.keyboardButton:hover {
+    background-color: var(--accent-color-4-light);
+}
+
+.keyboardButton:active {
+    background-color: var(--accent-color-4-dark);
+}
+
+.gameFooter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}

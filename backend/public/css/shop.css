@@ -1,0 +1,261 @@
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+
+.shop_information {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.shop_information > * {
+  height: auto;
+}
+
+#orders,
+#cart {
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: var(--accent-color-2);
+  height: fit-content;
+}
+
+#orders:hover,
+#cart:hover {
+  background-color: var(--accent-color-2-light);
+}
+
+#orders:active,
+#cart:active {
+  background-color: var(--accent-color-2-dark);
+}
+
+#category {
+  text-align: center;
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 1200px;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 10px;
+  background-color: var(--accent-color-1);
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  padding: 5px;
+}
+
+#category button {
+  border: none;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  margin: 0 5px;
+  background-color: transparent;
+}
+
+#category button:hover {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+#category button:active {
+  background-color: var(--accent-color-1-dark);
+}
+
+#category button.selected {
+  background-color: var(--accent-color-1-light);
+  border: 2px solid var(--accent-color-1-dark);
+}
+
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  justify-content: center;
+}
+
+.products {
+  box-sizing: border-box;
+  /* border: 5px solid #CCC; */
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  height: 200px;
+  width: 300px;
+  background-color: var(--main-color-light);
+  align-items: center;
+}
+
+.products:hover {
+  border: 2px solid white;
+}
+
+.products img {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.products > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.products h2,
+.products p {
+  padding: 10px;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.products button {
+  border-radius: 10px;
+  background-color: var(--accent-color-1);
+  border: 5px solid rgba(0, 0, 0, 0.2);
+}
+.products button:hover {
+  background-color: var(--accent-color-1-light);
+}
+
+.products button:active {
+  background-color: var(--accent-color-1-dark);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr {
+  height: 50px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+th {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+td {
+  padding: 0px;
+  text-align: center;
+  width: 30px;
+}
+
+#order td {
+  padding: 0 20px;
+}
+
+#js-table-order img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.selected {
+  background-color: var(--accent-color-3-light);
+}
+
+table button {
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: var(--accent-color-2);
+  height: fit-content;
+  width: fit-content;
+}
+
+table button:hover {
+  background-color: var(--accent-color-2-light);
+}
+
+table button:active {
+  background-color: var(--accent-color-2-dark);
+}
+
+table th {
+  padding: 0 25px;
+}
+
+.total-price {
+  font-size: larger;
+  font-weight: 800;
+}
+
+.amount_cart {
+  user-select: none;
+}
+
+.amount_cart .spammer {
+  padding: 4px 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+  font-size: 20px;
+  transition: 200ms;
+  margin: 0 16px;
+  cursor: pointer;
+}
+
+.amount_cart .spammer.minus {
+  padding: 4px 12px;
+}
+
+.amount_cart .spammer:hover {
+  color: white;
+  background-color: black;
+}
+
+.popupFooter {
+  display: flex;
+  gap: 1rem;
+}
+
+.placeOrder {
+  border-radius: 10px;
+  background-color: var(--accent-color-1);
+  border: 5px solid rgba(0, 0, 0, 0.2);
+}
+.placeOrder:hover {
+  background-color: var(--accent-color-1-light);
+}
+
+.placeOrder:active {
+  background-color: var(--accent-color-1-dark);
+}
+
+@media (max-width: 760px) {
+  #category {
+    padding: 10px 0;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  dialog {
+    max-width: 80%;
+  }
+  #js-table-order {
+    display: block;
+    width: 100%; /* Set the table width to 100% */
+    max-height: 300px; /* Adjust the max-height as needed */
+    overflow-y: auto; /* Add vertical scroll if necessary */
+  }
+  .shop_information {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #category {
+    margin: 10px 0px;
+  }
+  #orders {
+    margin: 0 auto;
+  }
+}

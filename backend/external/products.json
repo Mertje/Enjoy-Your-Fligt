@@ -1,0 +1,26 @@
+{
+  "category": [
+    { "category_name": "Warm" },
+    { "category_name": "Cold" },
+    { "category_name": "Beverage" },
+    { "category_name": "Alcohol" },
+    { "category_name": "Internet" }
+  ],
+  "products": [
+    { "isbn": 543523432, "price": 32.33, "product_name": "Cola", "imageUrl": "cola.jpg", "quantity": 12 },
+    { "isbn": 423424, "price": 21.0, "product_name": "Pepsi", "imageUrl": "pepsi.jpg", "quantity": 0 },
+    { "isbn": 4324332, "price": 56, "product_name": "Beer", "imageUrl": "beer.jpg", "quantity": 120 },
+    { "isbn": 432423, "price": 18.82, "product_name": "Milk", "imageUrl": "milk.jpg", "quantity": 452 },
+    { "isbn": 2432423, "price": 12.32, "product_name": "Water", "imageUrl": "water.jpg", "quantity": 212 },
+    { "isbn": 4324342, "price": 2.2, "product_name": "coffee", "imageUrl": "coffee.jpg", "quantity": 324 }
+  ],
+
+  "product_category": [
+    { "isbnProduct": 543523432, "categoryName": "Beverage" },
+    { "isbnProduct": 423424, "categoryName": "Beverage" },
+    { "isbnProduct": 4324332, "categoryName": "Alcohol" },
+    { "isbnProduct": 432423, "categoryName": "Cold" },
+    { "isbnProduct": 2432423, "categoryName": "Cold" },
+    { "isbnProduct": 4324342, "categoryName": "Warm" }
+  ]
+}

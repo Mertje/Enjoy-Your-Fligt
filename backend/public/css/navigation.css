@@ -1,0 +1,331 @@
+@font-face {
+  font-family: "mont";
+  src: url("../assets/Montserrat-Regular.ttf");
+}
+
+:root {
+  /* --clr-bg: #d4787c; */
+
+  /* --clr-bg: #f5f5f5;
+  --clr-bg-accent: #dcd5e5;
+  --clr-bg-accent: #9fb0b6; */
+
+  /* --clr-bg: #FFFFFF; */
+  /* --clr-bg: #9fb0b6; */
+
+  /* --clr-main: #d4787c;
+  --clr-accent-1: #7c8cd4;
+  --clr-accent-2: #7cd49c;
+  --clr-text: #333333;
+  --clr-highlight: #777777;
+
+  --clr-main: #f2a648;
+  --clr-accent-1: #3f8ebc;
+  --clr-accent-2: #3dbc85;
+  --clr-text: #333333;
+  --clr-highlight: #777777;
+
+  --clr-main: #f26c3f;
+  --clr-accent-1: #7c8cd4;
+  --clr-accent-2: #7cd49c;
+  --clr-text: #333333;
+  --clr-highlight: #777777; */
+
+  /* --clr-main-1: #020c33;
+  --clr-main-2: #00364d;
+
+  --clr-accent1-2: #45878a;
+
+  --clr-accent2-2: #61cec5;
+
+  --clr-accent3-2: #E35D11;
+
+  --clr-accent4-2: #54e2cc;
+
+  --clr-3-bg: #1c303b;
+  --clr-3-bg-accent: #dcd5e5;
+  --clr-3-nav: #112f32;
+  --clr-3-nav-accent: #768d92;
+  --clr-3-main: #E35D11;
+  --clr-3-main-accent: #f82e0f;
+  --clr-3-accent: #54e2cc;
+  --clr-3-accent-2: #00ccb4;
+
+  --clr-4-bg-light: #f7e7eb;
+  --clr-4-bg-dark: #a96e7f;
+
+  --clr-4-text: #00fed2;
+  --clr-4-highlight: #9fb0b6;
+  --clr-4-highlight-2: #700909;
+
+  --clr-4-nav: #574142;
+
+  --clr-4-accent: #bfa5a5;
+  --clr-4-accent-2: #00a4a8;
+  --clr-4-accent-3: #006f74;
+
+  --clr-5-accent-1: #313E50; */
+
+  --main-color: #f26c3f;
+  --main-color-light: #f88f6e;
+  --main-color-dark: #d94e25;
+
+  --accent-color-1: #7c8cd4;
+  --accent-color-1-light: #a0acf8;
+  --accent-color-1-dark: #5666a8;
+
+  --accent-color-2: #7cd49c;
+  --accent-color-2-light: #a6f8c6;
+  --accent-color-2-dark: #4a9c71;
+
+  --accent-color-3: #f2cb48;
+  --accent-color-3-light: #f7e27a;
+  --accent-color-3-dark: #c59e1e;
+
+  --accent-color-4: #d47ca3;
+  --accent-color-4-light: #f0a3cb;
+  --accent-color-4-dark: #a44d7b;
+
+  --highlight-color: #ffffff;
+  --text-color: #333333;
+
+  --cancel-color: #e53935;
+  --cancel-color-light: #ff6f60;
+  --cancel-color-dark: #b61827;
+  --background-color: #fff7f4;
+}
+
+* {
+  font-family: "mont";
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  min-height: 100dvh;
+  min-height: 100vh;
+  max-height: 100dvh;
+  max-height: 100vh;
+  margin: 0;
+  display: flex;
+}
+
+a {
+  color: var(--accent-color-1);
+}
+
+button {
+  font-size: 16px;
+  transition: 200ms;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: var(--text-color);
+}
+button:disabled:hover {
+  background-color: var(--text-color);
+}
+
+nav {
+  display: flex;
+}
+
+.toggle-menu,
+.close-btn {
+  display: none;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+.sidenav {
+  width: 220px;
+  background-image: linear-gradient(var(--main-color-dark), var(--main-color-light));
+  overflow-x: hidden;
+  padding-top: 20px;
+  flex: 1;
+  -webkit-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+}
+
+.sidenav a,
+#logOut {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: inherit;
+  display: block;
+  transition: 200ms;
+}
+
+#logOut {
+  position: absolute;
+  bottom: 10px;
+}
+
+/* Change the color of links on hover */
+.sidenav a:hover,
+#logOut:hover,
+#log_Out:hover {
+  font-size: 24px;
+}
+
+.banner {
+  height: 200px;
+  width: 100%;
+  background-image: url("../assets/home/header.jpg");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.show .close-btn {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: inherit;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cancelButton {
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: var(--cancel-color);
+  height: fit-content;
+}
+
+.cancelButton:hover {
+  background-color: var(--cancel-color-light);
+}
+
+.cancelButton:active {
+  background-color: var(--cancel-color-dark);
+}
+
+.actionButton {
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: var(--accent-color-1);
+  height: fit-content;
+}
+
+.actionButton:hover {
+  background-color: var(--accent-color-1-light);
+}
+
+.actionButton:active {
+  background-color: var(--accent-color-1-dark);
+}
+
+.menuButton {
+  border: 5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: var(--accent-color-2);
+  height: fit-content;
+}
+
+.menuButton:hover {
+  background-color: var(--accent-color-2-light);
+}
+
+.menuButton:active {
+  background-color: var(--accent-color-2-dark);
+}
+
+#popup {
+  padding: 1rem;
+  background-color: var(--background-color);
+  border: 5px solid var(--main-color);
+  border-radius: 10px;
+  color: var(--text-color);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#popup > * {
+  width: 100%;
+}
+
+#popup::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#popup[open=""] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#popup footer {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+body > .content {
+  width: fit-content;
+  margin: auto;
+}
+
+@media only screen and (width < 768px) {
+  body {
+    display: block;
+  }
+
+  nav {
+    height: 40px;
+  }
+
+  .sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    transform: translate(0, -100%);
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .sidenav.show {
+    transform: translate(0, 0);
+  }
+
+  .show.sidenav a {
+    color: inherit;
+  }
+
+  /* Style the toggle button */
+  .toggle-menu {
+    display: block;
+    width: 100%;
+    background-color: var(--main-color-dark);
+    color: var(--clr-text);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+  }
+}

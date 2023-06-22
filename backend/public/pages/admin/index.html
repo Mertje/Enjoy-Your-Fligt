@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/navigation.css">
+  <link rel="stylesheet" href="../../css/adminIndex.css">
+  <script type="text/javascript" src="../../scripts/adminIndex.js" defer></script>
+  <title>Paneel</title>
+</head>
+
+<body>
+  <div class="content">
+    <div class="sidenav settings">
+      <h2 class="settingsName">Instellingen</h2>
+      <div>
+        <label>Zet wifi uit: </label>
+        <input id="toggleWifi" type="checkbox" />
+      </div>
+      <div>
+        <button id="log_Out"> Uitloggen </button>
+      </div>
+    </div>
+    <div class="orders">
+      <select id="viewOrders">
+        <option value="order">Niet verzonden</option>
+        <option value="all">Alle</option>
+      </select>
+      <table>
+        <thead>
+          <tr>
+            <th>Stoel</th>
+            <th>Producten</th>
+            <th>Prijs</th>
+            <th>Naam</th>
+            <th>Bestel tijd</th>
+            <th>Verzonden?</th>
+          </tr>
+        </thead>
+        <tbody id="orders">
+        </tbody>
+      </table>
+
+    </div>
+
+    <div id="products">
+
+    </div>
+
+  </div>
+</body>
+
+</html>

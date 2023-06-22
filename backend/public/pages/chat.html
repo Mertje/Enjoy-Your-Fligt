@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/chat.css">
+  <script src="socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="../scripts/navigation.js" defer></script>
+  <script defer src="../scripts/chat.js"></script>
+  <title>Chat applicatie</title>
+</head>
+
+<body>
+  <nav></nav>
+  <main>
+    <dialog id="popup">
+      <header></header>
+      <div class="content"></div>
+      <footer>
+        <button class="cancelButton" onclick="closePopup()">Sluit</button>
+      </footer>
+    </dialog>
+    <input id="toggle" type="checkbox">
+    <div id="contacts"></div>
+    <div id="chat">
+      <div id="typing">
+        <h4>...</h4>
+      </div>
+      <header></header>
+      <div class="messages">
+      </div>
+      <footer>
+        <textarea name="chatInput" id="chatInput" wrap="soft" rows="2"></textarea>
+        <button id="chatSend">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </footer>
+    </div>
+  </main>
+</body>
+
+</html>

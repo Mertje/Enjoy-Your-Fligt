@@ -1,0 +1,14 @@
+{
+  "users": [
+    { "username": "Bobby", "seat_Number": "32F", "ticket_number": "432423423dwq" },
+    { "username": "karma", "seat_Number": "31C", "ticket_number": "43dwq" },
+    { "username": "Jan", "seat_Number": "12A", "ticket_number": "3dwq" },
+    { "username": "Bas", "seat_Number": "34F", "ticket_number": "2wqd" },
+    { "username": "Murat", "seat_Number": "28C", "ticket_number": "mert" },
+    { "username": "Kerman", "seat_Number": "12A", "ticket_number": "drang" }
+  ],
+  "workers": [
+    { "username": "root", "password": "root" },
+    { "username": "mert", "password": "gunes" }
+  ]
+}

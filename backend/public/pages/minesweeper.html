@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/minesweeper.css">
+  <script src="../scripts/minesweeper.js" defer></script>
+  <script type="text/javascript" src="../scripts/navigation.js" defer></script>
+  <title>Mijnenveger</title>
+</head>
+<body>
+  <nav></nav>
+  <div class="content">
+    <main class="border">
+      <header class="info border-reverse">
+        <div class="header-item bomb-info">
+          <h1>000</h1>
+        </div>
+        <div class="header-item controls">
+          <button onclick="gameSetup()">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"
+                stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="header-item time-info">
+          <h1>000</h1>
+        </div>
+      </header>
+      <div class="container border-reverse">
+      </div>
+      <footer class="settings border-reverse">
+        <section>
+          <label for="rowsInput">Aantal rijen verticaal: <span id="rowCount">9</span></label>
+          <input type="range" name="rowsInput" id="rowsInput" oninput="updateRowCount(this)" value="9" min="5" max="25">
+        </section>
+        <section>
+          <label for="colsInput">Aantal rijen horizontaal: <span id="colCount">9</span></label>
+          <input type="range" name="colsInput" id="colsInput" oninput="updateColCount(this)" value="9" min="5" max="25">
+        </section>
+        <section>
+          <label for="bombsInput">Aantal bommen: <span id="bombCount">10</span></label>
+          <input type="range" name="bombsInput" id="bombsInput" oninput="updateBombCount(this)" value="10" min="5" max="80">
+        </section>
+        <button onclick="gameSetup()">Verversen</button>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

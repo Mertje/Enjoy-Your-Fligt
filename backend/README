@@ -1,0 +1,50 @@
+# Project info eyf
+
+## Vereisten
+
+- Usb met de naam `EXTERNAL`. geformateert op EXFAT.
+- Raspberry PI met pi OS 64 bits Desktop.
+- Een internet connectie via Ethernet of usb tethering.
+
+<br> </br>
+
+## Installatie stappen
+
+- Zet het project genaamd "backend" over op een usb flash drive.
+- Plaats de usb in de raspberry pi.
+- Check in de folder for een node_modules folder. verwijder deze.
+- Check ook de prisma folder en verwijder all folders in migrations folder niet de TOML bestand.
+- Verplaats het project naar de Desktop folder door het slepen.
+- Open de terminal en type `cd ~/Desktop/backend/docs && chmod u+x mysql_node.sh && dos2unix mysql_node.sh && sh mysql_node.sh`
+- Om de accespoint werkend te krijgen type `cd ~/Desktop/backend/docs && chmod u+x accespoint.sh && dos2unix accespoint.sh && sh accespoint.sh`
+<!-- - Om de captive portal werkend te krijgen type `cd ~/Desktop/backend/docs && chmod u+x nodogsplash.sh && dos2unix nodogsplash.sh && sh nodogsplash.sh` -->
+
+<br> </br>
+
+## Website configuratie
+
+Hou er rekening mee dat de volgende scripts niet werken als je niet de stappen van `info/usbinfo.md` volgt.
+In de backend folder staat er een externalfolder wat je als dummy dat kan gebruiken.
+sleep alles in de folder naar de root van de usb stick.
+
+- Zorg er voor dat je de usb geconfigureerd heb zoals het in `info/usbinfo.md` is beschreven.
+- Plaats de usb stick in de pi en voer het volgende uit `cd ~/Desktop/backend/ && npm run createDB`
+- De web server start na het opnieuw opstarten van de pi dit kan je doen door `sudo reboot` commando uit te voeren
+
+voor als je de server handmatig opnieuw wilt opstarten voer het volgende in `cd ~/Desktop/backend/ && node index.js`
+
+<br> </br>
+
+## Database informatie
+
+Database dump:
+
+- Om de database te dumpen voer het volgende uit: `cd ~/Desktop/backend/ && npm run dumpDB` vul de wachtwoord in van de database dit is standaart `root`.
+- De database bestand komt in de `info` folder te staan als een .sql bestand.
+
+<br> </br>
+
+Database verwijderen en opnieuw initialseren:
+
+- voer `cd ~/Desktop/backend/ && npm run deleteDB` uit, deze commanda verwijderd de database.
+- voer exact de stappen uit van het gedeelte Website configuratie om een nieuwe database te installeren.

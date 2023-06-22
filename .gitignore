@@ -1,0 +1,128 @@
+# the basics, ready for nested modules in intellij
+
+# System Files
+**/.DS_Store
+**/__MACOSX/
+Thumbs.db
+
+# IDE - Intellij
+**/.idea/
+*.iml
+*.ipr
+*.iws
+**/target/
+**/out/
+**/dist/
+**/out-tsc/
+
+# IDE - VSCode
+**/.vscode/
+**/.vscode-test/
+*.code-workspace
+
+# npm, node, yarn
+**/node_modules/
+package-lock.json
+yarn.lock
+npm-debug.log*
+yarn-error.log*
+**/.npm/
+
+# CSS
+**/.sass-cache/
+
+### Java ###
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+
+### Maven ###
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
+.mvn/wrapper/maven-wrapper.jar
+# maven cache
+**/.mvn/
+
+# MS-office files
+~$*.*
+
+
+# Created by https://www.toptal.com/developers/gitignore/api/intellij+all,pycharm+all,java,flask
+# Edit at https://www.toptal.com/developers/gitignore?templates=intellij+all,pycharm+all,java,flask
+
+### Flask ###
+instance/*
+!instance/.gitignore
+.webassets-cache
+.env
+
+### Flask.Python Stack ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Translations
+*.mo
+*.pot
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+backend/prisma/migrations/

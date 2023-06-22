@@ -1,0 +1,156 @@
+@font-face {
+    font-family: minesweeper;
+    src: url("../assets/minesweeper/mine-sweeper.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --border-outer: #808080;
+    --border-inner: white;
+    --main-bg: #c6c6c6;
+    --cell-bg: #c0c0c0;
+
+    --col-count: 9;
+    --max-bombs: 80;
+}
+
+.content {
+    height: 100vh;
+    /* width: 100vw; */
+    /* background-color: rgb(51, 51, 51); */
+    display: grid;
+    place-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    /* width: 50%; */
+    background-color: var(--main-bg);
+    padding: 10px;
+
+}
+
+.border {
+    border: 5px solid;
+    border-bottom-color: var(--border-outer);
+    border-right-color: var(--border-outer);
+    border-top-color: var(--border-inner);
+    border-left-color: var(--border-inner);
+}
+
+.border-reverse {
+    border: 5px solid;
+    border-bottom-color: var(--border-inner);
+    border-right-color: var(--border-inner);
+    border-top-color: var(--border-outer);
+    border-left-color: var(--border-outer);
+}
+
+.border-small {
+    border-width: 3px;
+}
+
+header,
+.container,
+footer {
+    background-color: var(--main-bg);
+    padding: .5em;
+}
+
+.container {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(var(--col-count), 24px);
+    margin: 10px 0;
+    place-content: center;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 4em;
+}
+
+.header-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.controls > button {
+    width: 3em;
+    aspect-ratio: 1 / 1;
+}
+
+.cell {
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+    max-height: 24px;
+    height: 24px;
+    user-select: none;
+    font-family: minesweeper !important;
+}
+
+.revealed {
+    background-color: var(--main-bg);
+    border-left: 2px solid var(--border-outer);
+    border-top: 2px solid var(--border-outer);
+    border-right: none;
+    border-bottom: none;
+}
+
+.bomb {
+    background-color: red;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings > button {
+    justify-self: center;
+    max-width: 200px;
+}
+
+.settings > section {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings > section > input {
+    /* max-width: 200px; */
+    flex: 1;
+}
+
+.type-1 {
+    color: blue;
+}
+.type-2 {
+    color: forestgreen;
+}
+.type-3 {
+    color: red;
+}
+.type-4 {
+    color: darkblue;
+}
+.type-5 {
+    color: darkred;
+}
+.type-6 {
+    color: turquoise;
+}
+.type-7 {
+    color: black;
+}
+.type-8 {
+    color: #808080;
+}

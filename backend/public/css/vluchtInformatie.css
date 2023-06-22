@@ -1,0 +1,214 @@
+/* @import "node_modules/ol/ol.css"; */
+
+
+#map {
+  width: 100%;
+}
+
+#modal {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 250px;
+  padding: .5rem;
+  box-sizing: border-box;
+  text-align: center;
+  max-height: 100%;
+  max-width: 20rem;
+
+  z-index: 1;
+  transition: translate 500ms cubic-bezier(.6, .2, .4, .8);
+}
+
+#modal.hide-modal {
+  translate: 0 calc(-100% + 100px + 1rem);
+}
+
+#modal>* {
+  background-color: white;
+  border-radius: 25px;
+  padding: 1rem;
+  /* border: 2px solid gray; */
+  box-shadow: -5px 5px 5px gray;
+}
+
+#modal header {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  width: 100%;
+  gap: .1rem;
+  place-items: center;
+}
+
+.flight-info {
+  width: 100%;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+.airport {
+  margin-bottom: 1rem;
+}
+
+.flight-info.time h5 {
+  color: rgba(128, 128, 128, .5);
+
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+header > svg {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 12px);
+}
+
+#modal section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: hidden;
+}
+
+#modal .weather-info-container {
+  flex: 1 0 auto;
+}
+
+.weather-info {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  width: 100%;
+  gap: .1rem;
+  min-height: 0;
+}
+
+.weather-info > div {
+  display: flex;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+.weather-info h3,
+.weather-info h4 {
+  align-self: center;
+}
+
+.weather-info h4 {
+  padding-right: .2rem;
+}
+
+.places-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+.place-container {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 0.2rem;
+}
+
+.place-container * {
+  pointer-events: none;
+}
+
+.place {
+  overflow: hidden;
+  display: grid;
+  transition: grid-template-rows ease-in-out 250ms;
+  grid-template-rows: 0fr;
+}
+
+.place.shown {
+  grid-template-rows: 1fr;
+}
+
+.place > div {
+  overflow: hidden;
+}
+
+.place.shown > div > * {
+  margin: 0.4rem 0;
+}
+
+#modal footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100px;
+  box-sizing: border-box;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+}
+
+#timer {
+  margin: 0;
+}
+
+.rotate-180 {
+  rotate: 180deg;
+}
+
+@media screen and (width < 768px) {
+  #map {
+    height: 100vh;
+    position: absolute;
+    inset: 0;
+  }
+
+  .ol-zoom {
+    visibility: hidden;
+  }
+
+  nav {
+    z-index: 2;
+    position: relative;
+  }
+
+  #modal {
+    max-height: calc(100% - 40px);
+    max-width: 100%;
+    bottom: 0;
+    top: auto;
+  }
+}
+
+@media screen and (width < 500px) {
+  #modal {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+
+
+  #modal.hide-modal {
+    translate: 0 calc(100% - 100px - 1rem);
+  }
+
+  footer > svg {
+    transform: rotate(180deg);
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="../scripts/hangman.js" defer></script>
+  <link rel="stylesheet" href="../css/hangman.css">
+  <script type="text/javascript" src="../scripts/navigation.js" defer></script>
+  <title>Hangman</title>
+</head>
+<body>
+  <nav></nav>
+  <div class="content">
+    <h1 id="title">Hangman</h1>
+    <h4 id="tries">Fouten gok: <span id='mistakes'>0</span> of <span id='maxWrong'></span></h4>
+    <div class="gameContainer">
+      <div class="game">
+        <img id='hangmanPic' src="../assets/hangman/0.jpg">
+        <p>Raad de naam van de tulp:</p>
+        <p id="wordSpotlight">Made in China</p>
+      </div>
+      <div id="keyboard"></div>
+      <div class="gameFooter">
+        <button class="cancelButton" onClick="reset()">Opnieuw</button>
+        <button id="hintButton" class="actionButton" onclick="giveHint()">Hint</button>
+      </div>
+      <div>
+        <audio id="winSound" src="../assets/hangman/win.wav"></audio>
+        <audio id="loseSound" src="../assets/hangman/lose.wav"></audio>
+      </div>
+    </div>
+    <dialog id="popup">
+      <div class="winOrLose">
+        <h2 id="winOrLoseMessage">Made in China</h2>
+        <img id="winImage" src="../assets/hangman/win.png" alt="Win Image">
+        <img id="loseImage" src="../assets/hangman/lose.png" alt="Lose Image">
+        <button class="cancelButton" onClick="reset()">Opnieuw</button>
+      </div>
+    </dialog>
+  </div>
+</body>
+</html>

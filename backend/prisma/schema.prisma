@@ -1,0 +1,109 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  user_id       String      @id @default(uuid())
+  username      String      @unique @db.VarChar(40)
+  password      String      @db.VarChar(40)
+  created_at    DateTime    @default(now())
+}
+
+model User {
+  user_id       String      @id @default(uuid())
+  username      String      @unique @db.VarChar(40)
+  seat_Number   String      @unique
+  ticket_number String      @unique
+  created_at    DateTime    @default(now())
+  Message       Message[]
+  UserGroup     UserGroup[]
+  Order         Order[]
+  BlockList     BlockList[]
+}
+
+model BlockList {
+  blockID   String      @id @default(uuid())
+  users1   User    @relation(fields: [theBlocker], references: [user_id])
+  theBlocker  String
+  blockedGroup String @unique
+}
+
+model UserGroup {
+  users   User    @relation(fields: [userID], references: [user_id])
+  userID  String
+  group   Group   @relation(fields: [groupID], references: [group_id])
+  groupID String
+  private Boolean
+
+  @@id([userID, groupID])
+}
+
+model Group {
+  group_id   String      @id @default(uuid())
+  group_name String      @default("New Chat")
+  created_at DateTime    @default(now())
+  updated_at DateTime    @updatedAt
+  messages   Message[]
+  UserGroup  UserGroup[]
+}
+
+model Message {
+  message_id Int      @id @default(autoincrement())
+  user       User     @relation(fields: [userID], references: [user_id])
+  userID     String
+  content    String   @db.VarChar(255)
+  sent_at    DateTime @default(now())
+  Group      Group    @relation(fields: [groupID], references: [group_id])
+  groupID    String
+}
+
+model Order {
+  order_id   String  @id @default(uuid())
+  users     User     @relation(fields: [userID], references: [user_id])
+  userID    String
+  shipped   Boolean  @default(false)
+  created_at DateTime    @default(now())
+  orderDetail Order_details[]
+}
+
+model Order_details {
+  products   Products    @relation(fields: [productID], references: [product_id])
+  productID  String
+  productName String
+  order       Order @relation(fields: [orderID], references: [order_id])
+  orderID   String
+  total_quantity     Int
+  totalPrice Decimal @db.Decimal(6, 2)
+  
+  @@id([productID, orderID])
+}
+
+model Products {
+  product_id   String  @id @default(uuid())
+  isbn         Int     @unique
+  product_name String
+  imageUrl     String?
+  price        Decimal @db.Decimal(6, 2)
+  quantity     Int
+  orderDetails Order_details[]
+  categories   CategoryProduct[]
+}
+
+model CategoryProduct {
+  id          Int      @id @default(autoincrement())
+  isbnProduct Int
+  categoryName String
+  product     Products @relation(fields: [isbnProduct], references: [isbn])
+  category    Category @relation(fields: [categoryName], references: [category_name])
+}
+
+model Category {
+  category_id   String      @id @default(uuid())
+  category_name String      @unique
+  products      CategoryProduct[]
+}

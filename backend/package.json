@@ -1,0 +1,26 @@
+{
+  "name": "flightbackend",
+  "version": "1.0.0",
+  "description": "Socket, usb checker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "createDB": "npx prisma migrate dev --name init && node ./controllers/initDataUsb.js",
+    "deleteDB": "node ./controllers/resetDB.js",
+    "dumpDB": "mysqldump -u root eyf  > ./info/database_eyf -p"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.10.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-sse": "^0.5.3",
+    "jsonwebtoken": "^9.0.0",
+    "socket.io": "^4.6.1"
+  },
+  "devDependencies": {
+    "prisma": "^4.11.0"
+  }
+}
